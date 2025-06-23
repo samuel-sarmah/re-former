@@ -1,8 +1,10 @@
-<form action="/users/new" method="get" accept-charset="utf-8">
+<form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
     <label for="email">Email</label>
-    <input type="text" name="email" id="email">
-    <label for="user_name">User Name:</label>
-    <input type="text" name="user_name" id="user_name"><br><br>
-    <label for="password">Last name:</label>
+    <input type="text" name="email" id="email"><br><br>
+    <label for="username">User Name:</label>
+    <input type="text" name="username" id="username"><br><br>
+    <label for="password">Password:</label>
     <input type="password" name="password" id="password"><br><br>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Submit">
 </form>
