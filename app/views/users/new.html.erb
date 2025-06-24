@@ -10,3 +10,19 @@
     <input type="submit" value="Submit">
 </form>
 <% end%>
+
+<%= form_tag("/users", method: "post") do %>
+    <%= label_tag(:email, "Email") %>
+    <%= text_field_tag(:email) %>
+    <%= simple_format("\n") %>
+
+    <%= label_tag(:username, "User Name:") %>
+    <%= text_field_tag(:username) %>
+    <%= simple_format("\n") %>
+
+    <%= label_tag(:password, "Password:") %>
+    <%= password_field_tag(:password) %>
+    <%= simple_format("\n")%>
+    
+    <%= submit_tag("Submit") %>
+<%end%>
