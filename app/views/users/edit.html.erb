@@ -1,0 +1,48 @@
+<% if false %>
+    <form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
+        <label for="email">Email</label>
+        <input type="text" name="user[email]" id="email"><br><br>
+        <label for="username">User Name:</label>
+        <input type="text" name="user[username]" id="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="user[password]" id="password"><br><br>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Submit">
+    </form>
+<% end%>
+
+<% if false %>
+    <%= form_tag("/users", method: "post") do %>
+        <%= label_tag(:email, "Email") %>
+        <%= text_field_tag(:email) %>
+        <%= simple_format("\n") %>
+
+        <%= label_tag(:username, "User Name:") %>
+        <%= text_field_tag(:username) %>
+        <%= simple_format("\n") %>
+
+        <%= label_tag(:password, "Password:") %>
+        <%= password_field_tag(:password) %>
+        <%= simple_format("\n")%>
+        
+        <%= submit_tag("Submit") %>
+    <%end%>
+<% end %>
+
+<%= form_with model: @user do |form| %>
+    <div>
+        <%= form.label :email%>
+        <%= form.email_field :email, placeholder: "examplel@example.com" %>
+    </div><br>
+
+    <div>
+        <%= form.label :username %>
+        <%= form.text_field :username, placeholder: "Your user name here" %>
+    </div><br>
+
+    <div>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+    </div><br>
+    <%= form.submit%>
+<% end %>
