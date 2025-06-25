@@ -28,8 +28,8 @@
         <%= submit_tag("Submit") %>
     <%end%>
 <% end %>
-
-<%= form_with model: @user do |form| %>
+<h1>Edit your profile!</h1>
+<%= form_with url:"/users/:id/edit", method: :patch  do |form| %>
     <div>
         <%= form.label :email%>
         <%= form.email_field :email, placeholder: "examplel@example.com" %>
