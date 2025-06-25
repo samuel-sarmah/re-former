@@ -28,6 +28,8 @@
         <%= submit_tag("Submit") %>
     <%end%>
 <% end %>
+
+
 <h1>Edit your profile!</h1>
 <%= form_with url:"/users/:id/edit", method: :patch  do |form| %>
     <div>
