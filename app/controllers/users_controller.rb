@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   private
   # Gives us back the hash containing the params we need to create or update a post
   def user_params
