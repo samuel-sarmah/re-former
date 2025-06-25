@@ -32,6 +32,17 @@
 
 <h1>Edit your profile!</h1>
 <%= form_with url:"/users/:id/edit", method: :patch  do |form| %>
+
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> Prohibited this data from being saved: </h2>
+            <ul>
+                <% @user.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <div>
         <%= form.label :email%>
         <%= form.email_field :email, placeholder: "examplel@example.com" %>
